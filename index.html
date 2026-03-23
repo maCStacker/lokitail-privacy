@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LokiTail — Datenschutzerklärung / Privacy Policy</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --surface: #232342;
+    --text: #e0e0e6;
+    --muted: #9a9ab0;
+    --accent: #ff6b9d;
+    --accent-soft: rgba(255, 107, 157, 0.15);
+    --border: #2d2d4a;
+    --green: #4ade80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+  .logo-text {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .logo-text span { color: var(--accent); }
+  .lang-toggle {
+    display: flex;
+    gap: 4px;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 4px;
+  }
+  .lang-btn {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .lang-btn.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 36px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 20px 0 8px;
+  }
+  p { margin-bottom: 12px; }
+  ul, ol {
+    margin: 8px 0 16px 24px;
+  }
+  li { margin-bottom: 6px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-green { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+  .badge-yellow { background: rgba(250, 204, 21, 0.15); color: #facc15; }
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .hidden { display: none; }
+  @media (max-width: 600px) {
+    h1 { font-size: 22px; }
+    .container { padding: 20px 16px 60px; }
+    .card { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🐾</div>
+      <div class="logo-text">Loki<span>Tail</span></div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-de" onclick="setLang('de')">Deutsch</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DEUTSCH ==================== -->
+<div class="container" id="content-de">
+  <h1>Datenschutzerklärung</h1>
+  <p class="subtitle">Zuletzt aktualisiert: 23. März 2026</p>
+
+  <h2>1. Verantwortlicher</h2>
+  <p>LokiTail ist eine von einer Einzelperson entwickelte Open-Source-App für die private Verwaltung von Haustier-Gesundheitsdaten. Es gibt keinen kommerziellen Betreiber und keinen zentralen Server.</p>
+  <p>Kontakt für Datenschutzanfragen: <strong>lokitail@macstacker.com</strong></p>
+
+  <h2>2. Grundsatz: Offline-First &amp; Lokal</h2>
+  <div class="card">
+    <p><span class="badge badge-green">✓ Kein Konto erforderlich</span> <span class="badge badge-green">✓ Keine Cloud</span> <span class="badge badge-green">✓ Keine Werbung</span> <span class="badge badge-green">✓ Kein Tracking</span></p>
+    <p style="margin-top:12px;">LokiTail speichert <strong>alle Daten ausschließlich lokal auf Ihrem Gerät</strong>. Es werden keine Daten an uns, an Dritte oder an einen zentralen Server gesendet — es sei denn, Sie aktivieren die optionale Synchronisierungsfunktion.</p>
+  </div>
+
+  <h2>3. Welche Daten werden gespeichert?</h2>
+  <p>Alle folgenden Daten werden <strong>nur lokal</strong> in einer SQLite-Datenbank auf Ihrem Gerät gespeichert:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Datenkategorie</th><th>Beispiele</th><th>Zweck</th></tr></thead>
+      <tbody>
+        <tr><td>Haustier-Profil</td><td>Name, Rasse, Geburtsdatum, Foto, Chipnummer</td><td>Identifikation &amp; Verwaltung</td></tr>
+        <tr><td>Gesundheitsdaten</td><td>Gewicht, Krankheiten, Symptome</td><td>Gesundheitsübersicht</td></tr>
+        <tr><td>Medikamente</td><td>Name, Dosierung, Zeitpläne</td><td>Erinnerungen &amp; Protokoll</td></tr>
+        <tr><td>Fütterung</td><td>Routinen, Mahlzeiten, Wassertracking</td><td>Ernährungsprotokoll</td></tr>
+        <tr><td>Tierarzt</td><td>Name, Adresse, Telefon, E-Mail, Termine</td><td>Terminverwaltung</td></tr>
+        <tr><td>Dokumente</td><td>Fotos, PDFs (Impfpass, Befunde etc.)</td><td>Dokumentenarchiv</td></tr>
+        <tr><td>Tagebuch</td><td>Freitext-Einträge mit optionalen Fotos</td><td>Notizen &amp; Erinnerungen</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Automatisch generierte Daten</h3>
+  <ul>
+    <li><strong>Geräte-ID:</strong> Eine zufällig generierte UUID zur Unterscheidung von Geräten bei der Synchronisierung. Diese ist nicht mit Ihrer Person verknüpft.</li>
+    <li><strong>Zeitstempel:</strong> Erstellungs- und Änderungszeitpunkte für die Datensynchronisierung.</li>
+    <li><strong>Crash-Logs:</strong> Technische Fehlermeldungen, lokal gespeichert (max. 500 KB, automatische Löschung nach 7 Tagen). Werden <strong>niemals automatisch versendet</strong>.</li>
+  </ul>
+
+  <h2>4. Berechtigungen</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Berechtigung</th><th>Zweck</th><th>Wann?</th></tr></thead>
+      <tbody>
+        <tr><td>Kamera</td><td>Fotos für Dokumente und Tagebuch aufnehmen</td><td>Nur bei Nutzung</td></tr>
+        <tr><td>Benachrichtigungen</td><td>Erinnerungen für Medikamente, Fütterung, Wasser, Termine</td><td>Nur wenn aktiviert</td></tr>
+        <tr><td>Genaue Alarme</td><td>Zeitgenaue Medikamenten-Erinnerungen</td><td>Nur wenn aktiviert</td></tr>
+        <tr><td>Lokales Netzwerk</td><td>Geräte-Erkennung für Synchronisierung (mDNS)</td><td>Nur bei Sync</td></tr>
+        <tr><td>Dateizugriff</td><td>Backup-Dateien speichern und laden</td><td>Nur bei Backup/Import</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Alle Berechtigungen werden <strong>erst bei Bedarf angefragt</strong>, niemals beim ersten Start. Sie können jede Berechtigung jederzeit in den Android-Einstellungen widerrufen.</p>
+
+  <h2>5. Synchronisierung (optional)</h2>
+  <p>Die Synchronisierung ist <strong>vollständig optional</strong> und muss aktiv eingerichtet werden.</p>
+
+  <h3>5.1 Lokale Synchronisierung (LAN)</h3>
+  <ul>
+    <li>Funktioniert nur im selben WLAN-Netzwerk</li>
+    <li>Alle Daten werden <strong>Ende-zu-Ende verschlüsselt</strong> (XSalsa20-Poly1305, 256-Bit-Schlüssel)</li>
+    <li>Der Verschlüsselungsschlüssel verlässt Ihre Geräte nicht</li>
+    <li>Es werden keine Daten an externe Server gesendet</li>
+  </ul>
+
+  <h3>5.2 Relay-Synchronisierung (optional, Remote)</h3>
+  <ul>
+    <li>Ermöglicht Synchronisierung über verschiedene Netzwerke</li>
+    <li>Erfordert einen Relay-Server (selbst gehostet oder bereitgestellt)</li>
+    <li>Alle Daten werden <strong>vor dem Versand verschlüsselt</strong> — der Relay-Server kann die Inhalte nicht lesen</li>
+    <li>Der Server sieht nur: verschlüsselte Datenblöcke, einen Familien-Identifikator und Zeitstempel</li>
+  </ul>
+
+  <h3>5.3 Geräte-Kopplung</h3>
+  <ul>
+    <li><strong>QR-Code:</strong> Der Verschlüsselungsschlüssel wird per QR-Code übertragen (lokaler Scan)</li>
+    <li><strong>Remote-Code:</strong> Ein 6-stelliger Code verschlüsselt den Schlüssel zusätzlich für die Übertragung über den Relay-Server</li>
+  </ul>
+
+  <h2>6. Backup &amp; Datenexport</h2>
+  <ul>
+    <li>Backups werden als ZIP-Datei <strong>lokal auf Ihrem Gerät</strong> gespeichert</li>
+    <li>Enthalten: Alle Haustier-Daten, Fotos, Dokumente, PDFs und die Datenbank</li>
+    <li>Automatische Backups: maximal 7 Dateien, ältere werden gelöscht</li>
+    <li>Sie entscheiden, wo Backups gespeichert werden</li>
+    <li><strong>Hinweis:</strong> Backup-Dateien sind nicht verschlüsselt. Bewahren Sie sie an einem sicheren Ort auf.</li>
+  </ul>
+
+  <h2>7. Was wir NICHT tun</h2>
+  <div class="card">
+    <ul style="margin-left:16px;">
+      <li>Wir sammeln <strong>keine personenbezogenen Daten</strong></li>
+      <li>Wir verwenden <strong>keine Analytics, kein Tracking, keine Werbung</strong></li>
+      <li>Wir senden <strong>keine Crash-Reports automatisch</strong></li>
+      <li>Es gibt <strong>kein Benutzerkonto</strong> und keine Registrierung</li>
+      <li>Wir verkaufen oder teilen <strong>keine Daten</strong></li>
+      <li>Es gibt <strong>keine versteckten Netzwerkverbindungen</strong></li>
+      <li>Es wird <strong>kein Firebase, Google Analytics oder vergleichbarer Dienst</strong> verwendet</li>
+    </ul>
+  </div>
+
+  <h2>8. Datensicherheit</h2>
+  <ul>
+    <li><strong>Verschlüsselung bei Übertragung:</strong> XSalsa20-Poly1305 (256-Bit, NaCl SecretBox)</li>
+    <li><strong>Lokale Speicherung:</strong> Im geschützten App-Verzeichnis (nicht für andere Apps zugänglich)</li>
+    <li><strong>Geräte-Schutz:</strong> Wir empfehlen die Verwendung einer Bildschirmsperre (PIN/Passcode/Biometrie)</li>
+  </ul>
+
+  <h2>9. Ihre Rechte (DSGVO)</h2>
+  <p>Da alle Daten lokal auf Ihrem Gerät gespeichert werden, haben Sie die volle Kontrolle:</p>
+  <ul>
+    <li><strong>Auskunft &amp; Zugang:</strong> Alle Daten sind direkt in der App einsehbar</li>
+    <li><strong>Datenportabilität:</strong> Export-Funktion als ZIP (CSV, JSON, Datenbank)</li>
+    <li><strong>Löschung:</strong> Einzelne Einträge löschen oder „Alle Daten löschen" in den Einstellungen</li>
+    <li><strong>Widerruf:</strong> Berechtigungen jederzeit in den Android-Einstellungen widerrufbar</li>
+    <li><strong>App deinstallieren:</strong> Entfernt alle App-Daten vom Gerät (externe Backups bleiben erhalten)</li>
+  </ul>
+
+  <h2>10. Kinder</h2>
+  <p>LokiTail richtet sich nicht speziell an Kinder. Die App sammelt keine personenbezogenen Daten, unabhängig vom Alter des Nutzers.</p>
+
+  <h2>11. Änderungen</h2>
+  <p>Diese Datenschutzerklärung kann mit App-Updates aktualisiert werden. Wesentliche Änderungen werden in den Release-Notes kommuniziert. Das Datum der letzten Aktualisierung finden Sie oben auf dieser Seite.</p>
+
+  <h2>12. Kontakt</h2>
+  <p>Bei Fragen zum Datenschutz erreichen Sie uns unter: <strong>lokitail@macstacker.com</strong></p>
+</div>
+
+<!-- ==================== ENGLISH ==================== -->
+<div class="container hidden" id="content-en">
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">Last updated: March 23, 2026</p>
+
+  <h2>1. Data Controller</h2>
+  <p>LokiTail is an open-source app developed by an individual for private management of pet health data. There is no commercial operator and no central server.</p>
+  <p>Contact for privacy inquiries: <strong>lokitail@macstacker.com</strong></p>
+
+  <h2>2. Core Principle: Offline-First &amp; Local</h2>
+  <div class="card">
+    <p><span class="badge badge-green">✓ No account required</span> <span class="badge badge-green">✓ No cloud</span> <span class="badge badge-green">✓ No ads</span> <span class="badge badge-green">✓ No tracking</span></p>
+    <p style="margin-top:12px;">LokiTail stores <strong>all data exclusively on your device</strong>. No data is sent to us, to third parties, or to any central server — unless you enable the optional sync feature.</p>
+  </div>
+
+  <h2>3. What Data Is Stored?</h2>
+  <p>All of the following data is stored <strong>only locally</strong> in a SQLite database on your device:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Pet Profile</td><td>Name, breed, birth date, photo, chip number</td><td>Identification &amp; management</td></tr>
+        <tr><td>Health Data</td><td>Weight, illnesses, symptoms</td><td>Health overview</td></tr>
+        <tr><td>Medications</td><td>Name, dosage, schedules</td><td>Reminders &amp; tracking</td></tr>
+        <tr><td>Feeding</td><td>Routines, meals, water tracking</td><td>Nutrition tracking</td></tr>
+        <tr><td>Veterinarian</td><td>Name, address, phone, email, appointments</td><td>Appointment management</td></tr>
+        <tr><td>Documents</td><td>Photos, PDFs (vaccination records, lab results, etc.)</td><td>Document archive</td></tr>
+        <tr><td>Diary</td><td>Free-text entries with optional photos</td><td>Notes &amp; memories</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Automatically Generated Data</h3>
+  <ul>
+    <li><strong>Device ID:</strong> A randomly generated UUID to distinguish devices during sync. It is not linked to your identity.</li>
+    <li><strong>Timestamps:</strong> Creation and modification timestamps for data synchronization.</li>
+    <li><strong>Crash Logs:</strong> Technical error messages, stored locally (max 500 KB, automatically deleted after 7 days). <strong>Never sent automatically.</strong></li>
+  </ul>
+
+  <h2>4. Permissions</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Permission</th><th>Purpose</th><th>When?</th></tr></thead>
+      <tbody>
+        <tr><td>Camera</td><td>Take photos for documents and diary</td><td>Only when used</td></tr>
+        <tr><td>Notifications</td><td>Reminders for medications, feeding, water, appointments</td><td>Only when enabled</td></tr>
+        <tr><td>Exact Alarms</td><td>Time-accurate medication reminders</td><td>Only when enabled</td></tr>
+        <tr><td>Local Network</td><td>Device discovery for synchronization (mDNS)</td><td>Only during sync</td></tr>
+        <tr><td>File Access</td><td>Save and load backup files</td><td>Only during backup/import</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>All permissions are <strong>requested only when needed</strong>, never on first launch. You can revoke any permission at any time in your Android settings.</p>
+
+  <h2>5. Synchronization (Optional)</h2>
+  <p>Synchronization is <strong>completely optional</strong> and must be actively set up.</p>
+
+  <h3>5.1 Local Sync (LAN)</h3>
+  <ul>
+    <li>Works only within the same Wi-Fi network</li>
+    <li>All data is <strong>end-to-end encrypted</strong> (XSalsa20-Poly1305, 256-bit key)</li>
+    <li>The encryption key never leaves your devices</li>
+    <li>No data is sent to external servers</li>
+  </ul>
+
+  <h3>5.2 Relay Sync (Optional, Remote)</h3>
+  <ul>
+    <li>Enables sync across different networks</li>
+    <li>Requires a relay server (self-hosted or provided)</li>
+    <li>All data is <strong>encrypted before transmission</strong> — the relay server cannot read the contents</li>
+    <li>The server only sees: encrypted data blobs, a family identifier, and timestamps</li>
+  </ul>
+
+  <h3>5.3 Device Pairing</h3>
+  <ul>
+    <li><strong>QR Code:</strong> The encryption key is transferred via QR code (local scan)</li>
+    <li><strong>Remote Code:</strong> A 6-digit code additionally encrypts the key for relay transmission</li>
+  </ul>
+
+  <h2>6. Backup &amp; Data Export</h2>
+  <ul>
+    <li>Backups are saved as ZIP files <strong>locally on your device</strong></li>
+    <li>Contains: All pet data, photos, documents, PDFs, and the database</li>
+    <li>Automatic backups: maximum 7 files, older ones are deleted</li>
+    <li>You decide where backups are stored</li>
+    <li><strong>Note:</strong> Backup files are not encrypted. Store them in a safe location.</li>
+  </ul>
+
+  <h2>7. What We Do NOT Do</h2>
+  <div class="card">
+    <ul style="margin-left:16px;">
+      <li>We do <strong>not collect any personal data</strong></li>
+      <li>We use <strong>no analytics, no tracking, no advertising</strong></li>
+      <li>We <strong>do not send crash reports automatically</strong></li>
+      <li>There is <strong>no user account</strong> and no registration</li>
+      <li>We do <strong>not sell or share any data</strong></li>
+      <li>There are <strong>no hidden network connections</strong></li>
+      <li><strong>No Firebase, Google Analytics, or comparable service</strong> is used</li>
+    </ul>
+  </div>
+
+  <h2>8. Data Security</h2>
+  <ul>
+    <li><strong>Encryption in transit:</strong> XSalsa20-Poly1305 (256-bit, NaCl SecretBox)</li>
+    <li><strong>Local storage:</strong> In the protected app directory (not accessible to other apps)</li>
+    <li><strong>Device protection:</strong> We recommend using a screen lock (PIN/passcode/biometrics)</li>
+  </ul>
+
+  <h2>9. Your Rights (GDPR)</h2>
+  <p>Since all data is stored locally on your device, you have full control:</p>
+  <ul>
+    <li><strong>Access:</strong> All data is directly viewable in the app</li>
+    <li><strong>Data portability:</strong> Export function as ZIP (CSV, JSON, database)</li>
+    <li><strong>Deletion:</strong> Delete individual entries or "Delete all data" in settings</li>
+    <li><strong>Withdrawal:</strong> Permissions can be revoked at any time in Android settings</li>
+    <li><strong>Uninstall:</strong> Removes all app data from the device (external backups remain)</li>
+  </ul>
+
+  <h2>10. Children</h2>
+  <p>LokiTail is not specifically directed at children. The app does not collect any personal data, regardless of the user's age.</p>
+
+  <h2>11. Changes</h2>
+  <p>This privacy policy may be updated with app releases. Significant changes will be communicated in the release notes. The date of the last update can be found at the top of this page.</p>
+
+  <h2>12. Contact</h2>
+  <p>For privacy-related questions, contact us at: <strong>lokitail@macstacker.com</strong></p>
+</div>
+
+<div class="footer">
+  © 2026 LokiTail · macstacker.com
+</div>
+
+<script>
+function setLang(lang) {
+  document.getElementById('content-de').classList.toggle('hidden', lang !== 'de');
+  document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
