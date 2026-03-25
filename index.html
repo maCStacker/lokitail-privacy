@@ -107,6 +107,11 @@
     padding-bottom: 8px;
     border-bottom: 1px solid var(--border);
   }
+  h2.deletion-header {
+    color: var(--accent);
+    font-size: 22px;
+    border-bottom: 2px solid var(--accent);
+  }
   h3 {
     font-size: 16px;
     font-weight: 600;
@@ -125,6 +130,13 @@
     padding: 20px;
     margin: 16px 0;
   }
+  .card-highlight {
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+  }
   .badge {
     display: inline-block;
     padding: 2px 10px;
@@ -133,7 +145,6 @@
     font-weight: 600;
   }
   .badge-green { background: rgba(74, 222, 128, 0.15); color: var(--green); }
-  .badge-yellow { background: rgba(250, 204, 21, 0.15); color: #facc15; }
   .table-wrap { overflow-x: auto; margin: 12px 0; }
   table {
     width: 100%;
@@ -165,7 +176,7 @@
   @media (max-width: 600px) {
     h1 { font-size: 22px; }
     .container { padding: 20px 16px 60px; }
-    .card { padding: 16px; }
+    .card, .card-highlight { padding: 16px; }
   }
 </style>
 </head>
@@ -187,10 +198,10 @@
 <!-- ==================== DEUTSCH ==================== -->
 <div class="container" id="content-de">
   <h1>Datenschutzerklärung</h1>
-  <p class="subtitle">Zuletzt aktualisiert: 23. März 2026</p>
+  <p class="subtitle">Zuletzt aktualisiert: 25. März 2026 · Version 0.8.32</p>
 
   <h2>1. Verantwortlicher</h2>
-  <p>LokiTail ist eine von einer Einzelperson entwickelte Open-Source-App für die private Verwaltung von Haustier-Gesundheitsdaten. Es gibt keinen kommerziellen Betreiber und keinen zentralen Server.</p>
+  <p>LokiTail ist eine von einer Einzelperson entwickelte App für die private Verwaltung von Haustier-Gesundheitsdaten. Es gibt keinen kommerziellen Betreiber und keinen zentralen Server.</p>
   <p>Kontakt für Datenschutzanfragen: <strong>lokitail@macstacker.com</strong></p>
 
   <h2>2. Grundsatz: Offline-First &amp; Lokal</h2>
@@ -208,10 +219,11 @@
       <tbody>
         <tr><td>Haustier-Profil</td><td>Name, Rasse, Geburtsdatum, Foto, Chipnummer</td><td>Identifikation &amp; Verwaltung</td></tr>
         <tr><td>Gesundheitsdaten</td><td>Gewicht, Krankheiten, Symptome</td><td>Gesundheitsübersicht</td></tr>
-        <tr><td>Medikamente</td><td>Name, Dosierung, Zeitpläne</td><td>Erinnerungen &amp; Protokoll</td></tr>
-        <tr><td>Fütterung</td><td>Routinen, Mahlzeiten, Wassertracking</td><td>Ernährungsprotokoll</td></tr>
-        <tr><td>Tierarzt</td><td>Name, Adresse, Telefon, E-Mail, Termine</td><td>Terminverwaltung</td></tr>
-        <tr><td>Dokumente</td><td>Fotos, PDFs (Impfpass, Befunde etc.)</td><td>Dokumentenarchiv</td></tr>
+        <tr><td>Medikamente</td><td>Name, Dosierung, Zeitpläne, Häufigkeit</td><td>Erinnerungen &amp; Adhärenz-Tracking</td></tr>
+        <tr><td>Fütterung</td><td>Routinen, Mahlzeiten, Vorlagen, Tagesmengen</td><td>Ernährungsprotokoll</td></tr>
+        <tr><td>Wasserwechsel</td><td>Zeitpunkte, Erinnerungsintervalle, geteilte Näpfe</td><td>Frische-Erinnerungen</td></tr>
+        <tr><td>Tierarzt</td><td>Name, Adresse, Telefon, E-Mail, Termine, Wiederholungen</td><td>Kontakt- &amp; Terminverwaltung</td></tr>
+        <tr><td>Dokumente</td><td>Fotos, PDFs (Impfpass, Befunde, Versicherung etc.)</td><td>Dokumentenarchiv</td></tr>
         <tr><td>Tagebuch</td><td>Freitext-Einträge mit optionalen Fotos</td><td>Notizen &amp; Erinnerungen</td></tr>
       </tbody>
     </table>
@@ -230,19 +242,29 @@
       <thead><tr><th>Berechtigung</th><th>Zweck</th><th>Wann?</th></tr></thead>
       <tbody>
         <tr><td>Kamera</td><td>Fotos für Dokumente und Tagebuch aufnehmen</td><td>Nur bei Nutzung</td></tr>
-        <tr><td>Benachrichtigungen</td><td>Erinnerungen für Medikamente, Fütterung, Wasser, Termine</td><td>Nur wenn aktiviert</td></tr>
-        <tr><td>Genaue Alarme</td><td>Zeitgenaue Medikamenten-Erinnerungen</td><td>Nur wenn aktiviert</td></tr>
+        <tr><td>Benachrichtigungen</td><td>Erinnerungen für Medikamente, Fütterung, Wasser, Tierarzt-Termine</td><td>Nur wenn aktiviert</td></tr>
+        <tr><td>Genaue Alarme</td><td>Zeitgenaue Medikamenten- und Fütterungserinnerungen</td><td>Nur wenn aktiviert</td></tr>
         <tr><td>Lokales Netzwerk</td><td>Geräte-Erkennung für Synchronisierung (mDNS)</td><td>Nur bei Sync</td></tr>
-        <tr><td>Dateizugriff</td><td>Backup-Dateien speichern und laden</td><td>Nur bei Backup/Import</td></tr>
+        <tr><td>Dateizugriff</td><td>Backup-Dateien und PDF-Dokumente speichern und laden</td><td>Nur bei Backup/Import/Dokumenten</td></tr>
       </tbody>
     </table>
   </div>
   <p>Alle Berechtigungen werden <strong>erst bei Bedarf angefragt</strong>, niemals beim ersten Start. Sie können jede Berechtigung jederzeit in den Android-Einstellungen widerrufen.</p>
 
-  <h2>5. Synchronisierung (optional)</h2>
+  <h2>5. Weitergabe an Geräte-Apps</h2>
+  <p>Bei bestimmten Aktionen werden Daten an andere Apps auf Ihrem Gerät weitergegeben. Dies geschieht <strong>nur auf Ihre aktive Aufforderung</strong> (Tap auf einen Button) und niemals automatisch:</p>
+  <ul>
+    <li><strong>Telefon-App:</strong> Beim Antippen einer Tierarzt-Telefonnummer wird diese an die Telefon-App übergeben</li>
+    <li><strong>E-Mail-App:</strong> Beim Antippen einer E-Mail-Adresse wird diese an die E-Mail-App übergeben</li>
+    <li><strong>Karten-App:</strong> Beim Antippen einer Adresse wird diese an die Karten-App übergeben</li>
+    <li><strong>Kalender-App:</strong> Beim Exportieren eines Tierarzt-Termins werden Datum, Uhrzeit, Grund und Tierarzt-Name an die Kalender-App übergeben</li>
+  </ul>
+  <p>Keine dieser Aktionen sendet Daten ins Internet — die Weitergabe erfolgt ausschließlich lokal zwischen Apps auf Ihrem Gerät.</p>
+
+  <h2>6. Synchronisierung (optional)</h2>
   <p>Die Synchronisierung ist <strong>vollständig optional</strong> und muss aktiv eingerichtet werden.</p>
 
-  <h3>5.1 Lokale Synchronisierung (LAN)</h3>
+  <h3>6.1 Lokale Synchronisierung (LAN)</h3>
   <ul>
     <li>Funktioniert nur im selben WLAN-Netzwerk</li>
     <li>Alle Daten werden <strong>Ende-zu-Ende verschlüsselt</strong> (XSalsa20-Poly1305, 256-Bit-Schlüssel)</li>
@@ -250,7 +272,7 @@
     <li>Es werden keine Daten an externe Server gesendet</li>
   </ul>
 
-  <h3>5.2 Relay-Synchronisierung (optional, Remote)</h3>
+  <h3>6.2 Relay-Synchronisierung (optional, Remote)</h3>
   <ul>
     <li>Ermöglicht Synchronisierung über verschiedene Netzwerke</li>
     <li>Erfordert einen Relay-Server (selbst gehostet oder bereitgestellt)</li>
@@ -258,22 +280,23 @@
     <li>Der Server sieht nur: verschlüsselte Datenblöcke, einen Familien-Identifikator und Zeitstempel</li>
   </ul>
 
-  <h3>5.3 Geräte-Kopplung</h3>
+  <h3>6.3 Geräte-Kopplung</h3>
   <ul>
     <li><strong>QR-Code:</strong> Der Verschlüsselungsschlüssel wird per QR-Code übertragen (lokaler Scan)</li>
     <li><strong>Remote-Code:</strong> Ein 6-stelliger Code verschlüsselt den Schlüssel zusätzlich für die Übertragung über den Relay-Server</li>
   </ul>
 
-  <h2>6. Backup &amp; Datenexport</h2>
+  <h2>7. Backup &amp; Datenexport</h2>
   <ul>
     <li>Backups werden als ZIP-Datei <strong>lokal auf Ihrem Gerät</strong> gespeichert</li>
-    <li>Enthalten: Alle Haustier-Daten, Fotos, Dokumente, PDFs und die Datenbank</li>
+    <li>Enthalten: Alle Haustier-Daten, Fotos, PDF-Dokumente und die Datenbank</li>
     <li>Automatische Backups: maximal 7 Dateien, ältere werden gelöscht</li>
     <li>Sie entscheiden, wo Backups gespeichert werden</li>
+    <li>Vor dem Export wird die geschätzte Backup-Größe angezeigt</li>
     <li><strong>Hinweis:</strong> Backup-Dateien sind nicht verschlüsselt. Bewahren Sie sie an einem sicheren Ort auf.</li>
   </ul>
 
-  <h2>7. Was wir NICHT tun</h2>
+  <h2>8. Was wir NICHT tun</h2>
   <div class="card">
     <ul style="margin-left:16px;">
       <li>Wir sammeln <strong>keine personenbezogenen Daten</strong></li>
@@ -286,49 +309,66 @@
     </ul>
   </div>
 
-  <h2>8. Datensicherheit</h2>
+  <h2>9. Datensicherheit</h2>
   <ul>
     <li><strong>Verschlüsselung bei Übertragung:</strong> XSalsa20-Poly1305 (256-Bit, NaCl SecretBox)</li>
     <li><strong>Lokale Speicherung:</strong> Im geschützten App-Verzeichnis (nicht für andere Apps zugänglich)</li>
+    <li><strong>Fotos &amp; PDFs:</strong> Lokal im App-Verzeichnis gespeichert, nicht in der Galerie sichtbar</li>
     <li><strong>Geräte-Schutz:</strong> Wir empfehlen die Verwendung einer Bildschirmsperre (PIN/Passcode/Biometrie)</li>
+    <li><strong>Löschbestätigung:</strong> Die Löschung aller Daten erfordert eine manuelle Texteingabe zur Bestätigung</li>
   </ul>
 
-  <h2>9. Ihre Rechte (DSGVO)</h2>
+  <h2>10. Ihre Rechte (DSGVO)</h2>
   <p>Da alle Daten lokal auf Ihrem Gerät gespeichert werden, haben Sie die volle Kontrolle:</p>
   <ul>
     <li><strong>Auskunft &amp; Zugang:</strong> Alle Daten sind direkt in der App einsehbar</li>
-    <li><strong>Datenportabilität:</strong> Export-Funktion als ZIP (CSV, JSON, Datenbank)</li>
+    <li><strong>Datenportabilität:</strong> Export-Funktion als ZIP (CSV, JSON, Datenbank, Fotos, PDFs)</li>
     <li><strong>Löschung:</strong> Einzelne Einträge löschen oder „Alle Daten löschen" in den Einstellungen</li>
     <li><strong>Widerruf:</strong> Berechtigungen jederzeit in den Android-Einstellungen widerrufbar</li>
     <li><strong>App deinstallieren:</strong> Entfernt alle App-Daten vom Gerät (externe Backups bleiben erhalten)</li>
   </ul>
 
-  <h2>10. Datenlöschung</h2>
-  <p>Sie können <strong>alle Ihre Daten jederzeit vollständig löschen</strong> — direkt in der App, ohne uns kontaktieren zu müssen:</p>
-  <div class="card">
-    <p><strong>Einstellungen → Alle Daten löschen</strong></p>
-    <p style="margin-top:8px;">Diese Funktion entfernt unwiderruflich alle gespeicherten Daten: Haustier-Profile, Gesundheitsdaten, Medikamente, Fütterungsroutinen, Tierarzt-Informationen, Dokumente, Fotos und die gesamte Datenbank. Die Löschung erfolgt sofort und ausschließlich auf Ihrem Gerät.</p>
+  <h2 class="deletion-header" id="dataloeschung">11. Datenlöschung</h2>
+  <p>Sie können <strong>alle Ihre Daten jederzeit vollständig und unwiderruflich löschen</strong> — direkt in der App, ohne uns kontaktieren zu müssen:</p>
+  <div class="card-highlight">
+    <p style="font-size:18px;font-weight:700;">Einstellungen → Alle Daten löschen</p>
+    <p style="margin-top:12px;">Diese Funktion entfernt <strong>sofort und unwiderruflich</strong> alle gespeicherten Daten von Ihrem Gerät:</p>
+    <ul style="margin-left:16px;">
+      <li>Haustier-Profile, Fotos und Profilbilder</li>
+      <li>Gesundheitsdaten, Gewichtsverlauf, Krankheiten und Symptome</li>
+      <li>Medikamentenpläne und Erinnerungen</li>
+      <li>Fütterungsroutinen, Vorlagen und Wasserwechsel-Daten</li>
+      <li>Tierarzt-Stammdaten, Termine und Zuordnungen</li>
+      <li>Dokumente (Fotos und PDFs), Tagebucheinträge</li>
+      <li>Papierkorb, Synchronisierungsdaten und alle Benachrichtigungen</li>
+    </ul>
+    <p style="margin-top:12px;">Zur Sicherheit müssen Sie das Wort <strong>„LÖSCHEN"</strong> eintippen um die Löschung zu bestätigen. Die Löschung erfolgt ausschließlich auf Ihrem Gerät.</p>
   </div>
-  <p>Alternativ können Sie einzelne Einträge direkt in der App löschen oder die App deinstallieren, um alle App-Daten vom Gerät zu entfernen.</p>
-  <p><strong>Hinweis:</strong> Extern gespeicherte Backups (z.B. auf SD-Karte oder NAS) werden durch die Löschung in der App nicht erfasst und müssen manuell entfernt werden.</p>
+  <p><strong>Weitere Löschmöglichkeiten:</strong></p>
+  <ul>
+    <li>Einzelne Einträge können jederzeit in der App gelöscht werden (Papierkorb mit 30-Tage-Wiederherstellung)</li>
+    <li>Einzelne Tiere können mit allen zugehörigen Daten gelöscht werden</li>
+    <li>Die App deinstallieren entfernt alle App-Daten vom Gerät</li>
+  </ul>
+  <p><strong>Hinweis:</strong> Extern gespeicherte Backups (z.B. auf SD-Karte oder NAS) werden durch die Löschung in der App nicht erfasst und müssen manuell entfernt werden. Auf anderen synchronisierten Geräten bleiben die Daten ebenfalls erhalten, bis sie dort separat gelöscht werden.</p>
 
-  <h2>11. Kinder</h2>
+  <h2>12. Kinder</h2>
   <p>LokiTail richtet sich nicht speziell an Kinder. Die App sammelt keine personenbezogenen Daten, unabhängig vom Alter des Nutzers.</p>
 
-  <h2>12. Änderungen</h2>
+  <h2>13. Änderungen</h2>
   <p>Diese Datenschutzerklärung kann mit App-Updates aktualisiert werden. Wesentliche Änderungen werden in den Release-Notes kommuniziert. Das Datum der letzten Aktualisierung finden Sie oben auf dieser Seite.</p>
 
-  <h2>13. Kontakt</h2>
+  <h2>14. Kontakt</h2>
   <p>Bei Fragen zum Datenschutz erreichen Sie uns unter: <strong>lokitail@macstacker.com</strong></p>
 </div>
 
 <!-- ==================== ENGLISH ==================== -->
 <div class="container hidden" id="content-en">
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Last updated: March 23, 2026</p>
+  <p class="subtitle">Last updated: March 25, 2026 · Version 0.8.32</p>
 
   <h2>1. Data Controller</h2>
-  <p>LokiTail is an open-source app developed by an individual for private management of pet health data. There is no commercial operator and no central server.</p>
+  <p>LokiTail is an app developed by an individual for private management of pet health data. There is no commercial operator and no central server.</p>
   <p>Contact for privacy inquiries: <strong>lokitail@macstacker.com</strong></p>
 
   <h2>2. Core Principle: Offline-First &amp; Local</h2>
@@ -346,10 +386,11 @@
       <tbody>
         <tr><td>Pet Profile</td><td>Name, breed, birth date, photo, chip number</td><td>Identification &amp; management</td></tr>
         <tr><td>Health Data</td><td>Weight, illnesses, symptoms</td><td>Health overview</td></tr>
-        <tr><td>Medications</td><td>Name, dosage, schedules</td><td>Reminders &amp; tracking</td></tr>
-        <tr><td>Feeding</td><td>Routines, meals, water tracking</td><td>Nutrition tracking</td></tr>
-        <tr><td>Veterinarian</td><td>Name, address, phone, email, appointments</td><td>Appointment management</td></tr>
-        <tr><td>Documents</td><td>Photos, PDFs (vaccination records, lab results, etc.)</td><td>Document archive</td></tr>
+        <tr><td>Medications</td><td>Name, dosage, schedules, frequency</td><td>Reminders &amp; adherence tracking</td></tr>
+        <tr><td>Feeding</td><td>Routines, meals, presets, daily amounts</td><td>Nutrition tracking</td></tr>
+        <tr><td>Water Changes</td><td>Timestamps, reminder intervals, shared bowls</td><td>Freshness reminders</td></tr>
+        <tr><td>Veterinarian</td><td>Name, address, phone, email, appointments, recurrences</td><td>Contact &amp; appointment management</td></tr>
+        <tr><td>Documents</td><td>Photos, PDFs (vaccination records, lab results, insurance, etc.)</td><td>Document archive</td></tr>
         <tr><td>Diary</td><td>Free-text entries with optional photos</td><td>Notes &amp; memories</td></tr>
       </tbody>
     </table>
@@ -368,19 +409,29 @@
       <thead><tr><th>Permission</th><th>Purpose</th><th>When?</th></tr></thead>
       <tbody>
         <tr><td>Camera</td><td>Take photos for documents and diary</td><td>Only when used</td></tr>
-        <tr><td>Notifications</td><td>Reminders for medications, feeding, water, appointments</td><td>Only when enabled</td></tr>
-        <tr><td>Exact Alarms</td><td>Time-accurate medication reminders</td><td>Only when enabled</td></tr>
+        <tr><td>Notifications</td><td>Reminders for medications, feeding, water, vet appointments</td><td>Only when enabled</td></tr>
+        <tr><td>Exact Alarms</td><td>Time-accurate medication and feeding reminders</td><td>Only when enabled</td></tr>
         <tr><td>Local Network</td><td>Device discovery for synchronization (mDNS)</td><td>Only during sync</td></tr>
-        <tr><td>File Access</td><td>Save and load backup files</td><td>Only during backup/import</td></tr>
+        <tr><td>File Access</td><td>Save and load backup files and PDF documents</td><td>Only during backup/import/documents</td></tr>
       </tbody>
     </table>
   </div>
   <p>All permissions are <strong>requested only when needed</strong>, never on first launch. You can revoke any permission at any time in your Android settings.</p>
 
-  <h2>5. Synchronization (Optional)</h2>
+  <h2>5. Data Shared with Device Apps</h2>
+  <p>Certain actions pass data to other apps on your device. This happens <strong>only at your explicit request</strong> (tapping a button) and never automatically:</p>
+  <ul>
+    <li><strong>Phone app:</strong> Tapping a vet phone number passes it to the phone app</li>
+    <li><strong>Email app:</strong> Tapping an email address passes it to the email app</li>
+    <li><strong>Maps app:</strong> Tapping an address passes it to the maps app</li>
+    <li><strong>Calendar app:</strong> Exporting a vet appointment passes date, time, reason, and vet name to the calendar app</li>
+  </ul>
+  <p>None of these actions send data to the internet — sharing happens exclusively between apps on your device.</p>
+
+  <h2>6. Synchronization (Optional)</h2>
   <p>Synchronization is <strong>completely optional</strong> and must be actively set up.</p>
 
-  <h3>5.1 Local Sync (LAN)</h3>
+  <h3>6.1 Local Sync (LAN)</h3>
   <ul>
     <li>Works only within the same Wi-Fi network</li>
     <li>All data is <strong>end-to-end encrypted</strong> (XSalsa20-Poly1305, 256-bit key)</li>
@@ -388,7 +439,7 @@
     <li>No data is sent to external servers</li>
   </ul>
 
-  <h3>5.2 Relay Sync (Optional, Remote)</h3>
+  <h3>6.2 Relay Sync (Optional, Remote)</h3>
   <ul>
     <li>Enables sync across different networks</li>
     <li>Requires a relay server (self-hosted or provided)</li>
@@ -396,22 +447,23 @@
     <li>The server only sees: encrypted data blobs, a family identifier, and timestamps</li>
   </ul>
 
-  <h3>5.3 Device Pairing</h3>
+  <h3>6.3 Device Pairing</h3>
   <ul>
     <li><strong>QR Code:</strong> The encryption key is transferred via QR code (local scan)</li>
     <li><strong>Remote Code:</strong> A 6-digit code additionally encrypts the key for relay transmission</li>
   </ul>
 
-  <h2>6. Backup &amp; Data Export</h2>
+  <h2>7. Backup &amp; Data Export</h2>
   <ul>
     <li>Backups are saved as ZIP files <strong>locally on your device</strong></li>
-    <li>Contains: All pet data, photos, documents, PDFs, and the database</li>
+    <li>Contains: All pet data, photos, PDF documents, and the database</li>
     <li>Automatic backups: maximum 7 files, older ones are deleted</li>
     <li>You decide where backups are stored</li>
+    <li>Estimated backup size is shown before export</li>
     <li><strong>Note:</strong> Backup files are not encrypted. Store them in a safe location.</li>
   </ul>
 
-  <h2>7. What We Do NOT Do</h2>
+  <h2>8. What We Do NOT Do</h2>
   <div class="card">
     <ul style="margin-left:16px;">
       <li>We do <strong>not collect any personal data</strong></li>
@@ -424,39 +476,56 @@
     </ul>
   </div>
 
-  <h2>8. Data Security</h2>
+  <h2>9. Data Security</h2>
   <ul>
     <li><strong>Encryption in transit:</strong> XSalsa20-Poly1305 (256-bit, NaCl SecretBox)</li>
     <li><strong>Local storage:</strong> In the protected app directory (not accessible to other apps)</li>
+    <li><strong>Photos &amp; PDFs:</strong> Stored locally in the app directory, not visible in the gallery</li>
     <li><strong>Device protection:</strong> We recommend using a screen lock (PIN/passcode/biometrics)</li>
+    <li><strong>Deletion confirmation:</strong> Deleting all data requires manual text input for confirmation</li>
   </ul>
 
-  <h2>9. Your Rights (GDPR)</h2>
+  <h2>10. Your Rights (GDPR)</h2>
   <p>Since all data is stored locally on your device, you have full control:</p>
   <ul>
     <li><strong>Access:</strong> All data is directly viewable in the app</li>
-    <li><strong>Data portability:</strong> Export function as ZIP (CSV, JSON, database)</li>
+    <li><strong>Data portability:</strong> Export function as ZIP (CSV, JSON, database, photos, PDFs)</li>
     <li><strong>Deletion:</strong> Delete individual entries or "Delete all data" in settings</li>
     <li><strong>Withdrawal:</strong> Permissions can be revoked at any time in Android settings</li>
     <li><strong>Uninstall:</strong> Removes all app data from the device (external backups remain)</li>
   </ul>
 
-  <h2>10. Data Deletion</h2>
-  <p>You can <strong>delete all your data at any time</strong> — directly in the app, without needing to contact us:</p>
-  <div class="card">
-    <p><strong>Settings → Delete All Data</strong></p>
-    <p style="margin-top:8px;">This function permanently removes all stored data: pet profiles, health data, medications, feeding routines, veterinarian information, documents, photos, and the entire database. Deletion happens immediately and exclusively on your device.</p>
+  <h2 class="deletion-header" id="data-deletion">11. Data Deletion</h2>
+  <p>You can <strong>delete all your data at any time, completely and irreversibly</strong> — directly in the app, without needing to contact us:</p>
+  <div class="card-highlight">
+    <p style="font-size:18px;font-weight:700;">Settings → Delete All Data</p>
+    <p style="margin-top:12px;">This function <strong>immediately and irreversibly</strong> removes all stored data from your device:</p>
+    <ul style="margin-left:16px;">
+      <li>Pet profiles, photos, and profile pictures</li>
+      <li>Health data, weight history, illnesses, and symptoms</li>
+      <li>Medication schedules and reminders</li>
+      <li>Feeding routines, presets, and water change data</li>
+      <li>Veterinarian contacts, appointments, and assignments</li>
+      <li>Documents (photos and PDFs), diary entries</li>
+      <li>Trash, sync data, and all notifications</li>
+    </ul>
+    <p style="margin-top:12px;">For safety, you must type the word <strong>"DELETE"</strong> to confirm the deletion. Deletion happens exclusively on your device.</p>
   </div>
-  <p>Alternatively, you can delete individual entries directly in the app or uninstall the app to remove all app data from your device.</p>
-  <p><strong>Note:</strong> Externally stored backups (e.g., on SD card or NAS) are not affected by in-app deletion and must be removed manually.</p>
+  <p><strong>Additional deletion options:</strong></p>
+  <ul>
+    <li>Individual entries can be deleted at any time in the app (trash with 30-day recovery)</li>
+    <li>Individual pets can be deleted with all associated data</li>
+    <li>Uninstalling the app removes all app data from the device</li>
+  </ul>
+  <p><strong>Note:</strong> Externally stored backups (e.g., on SD card or NAS) are not affected by in-app deletion and must be removed manually. Data on other synced devices also remains until separately deleted there.</p>
 
-  <h2>11. Children</h2>
+  <h2>12. Children</h2>
   <p>LokiTail is not specifically directed at children. The app does not collect any personal data, regardless of the user's age.</p>
 
-  <h2>12. Changes</h2>
+  <h2>13. Changes</h2>
   <p>This privacy policy may be updated with app releases. Significant changes will be communicated in the release notes. The date of the last update can be found at the top of this page.</p>
 
-  <h2>13. Contact</h2>
+  <h2>14. Contact</h2>
   <p>For privacy-related questions, contact us at: <strong>lokitail@macstacker.com</strong></p>
 </div>
 
@@ -475,4 +544,3 @@ function setLang(lang) {
 </script>
 </body>
 </html>
- 
