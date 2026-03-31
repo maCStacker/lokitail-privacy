@@ -198,7 +198,7 @@
 <!-- ==================== DEUTSCH ==================== -->
 <div class="container" id="content-de">
   <h1>Datenschutzerklärung</h1>
-  <p class="subtitle">Zuletzt aktualisiert: 25. März 2026 · Version 0.8.32</p>
+  <p class="subtitle">Zuletzt aktualisiert: 31. März 2026 · Version 1.0.7</p>
 
   <h2>1. Verantwortlicher</h2>
   <p>LokiTail ist eine von einer Einzelperson entwickelte App für die private Verwaltung von Haustier-Gesundheitsdaten. Es gibt keinen kommerziellen Betreiber und keinen zentralen Server.</p>
@@ -261,10 +261,29 @@
   </ul>
   <p>Keine dieser Aktionen sendet Daten ins Internet — die Weitergabe erfolgt ausschließlich lokal zwischen Apps auf Ihrem Gerät.</p>
 
-  <h2>6. Synchronisierung (optional)</h2>
+  <h2>6. Barcode-Produktsuche (optional)</h2>
+  <p>LokiTail bietet eine optionale Barcode-Scan-Funktion, um Produktinformationen zu Futtermitteln abzurufen.</p>
+  <div class="card">
+    <h3>Was passiert?</h3>
+    <p>Beim Scannen eines Barcodes wird die <strong>EAN-Barcode-Nummer</strong> an den Dienst <strong>Open Pet Food Facts</strong> (<a href="https://openpetfoodfacts.org" style="color:var(--accent);">openpetfoodfacts.org</a>, Server in Frankreich, EU) gesendet, um Produktinformationen abzurufen.</p>
+    <h3>Welche Daten werden übertragen?</h3>
+    <p>Ausschließlich die <strong>EAN-Barcode-Nummer</strong> — keine persönlichen Daten, kein Gerätename, keine IP-Speicherung durch uns.</p>
+    <h3>Wann?</h3>
+    <p>Nur wenn Sie die <strong>„Online-Produktsuche"</strong> in den Einstellungen <strong>explizit aktiviert</strong> haben (Opt-in). Beim ersten Scan erscheint ein Einwilligungsdialog.</p>
+    <h3>Standard</h3>
+    <p><strong>Deaktiviert</strong> — ohne Aktivierung werden keine Daten an externe Dienste gesendet.</p>
+    <h3>Deaktivierung</h3>
+    <p>Jederzeit deaktivierbar unter <strong>Einstellungen → Online-Produktsuche</strong>.</p>
+    <h3>Rechtsgrundlage</h3>
+    <p>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).</p>
+    <h3>Datenlöschung</h3>
+    <p>Lokal gecachte Produktdaten können unter <strong>Einstellungen → Alle Daten löschen</strong> entfernt werden.</p>
+  </div>
+
+  <h2>7. Synchronisierung (optional)</h2>
   <p>Die Synchronisierung ist <strong>vollständig optional</strong> und muss aktiv eingerichtet werden.</p>
 
-  <h3>6.1 Lokale Synchronisierung (LAN)</h3>
+  <h3>7.1 Lokale Synchronisierung (LAN)</h3>
   <ul>
     <li>Funktioniert nur im selben WLAN-Netzwerk</li>
     <li>Alle Daten werden <strong>Ende-zu-Ende verschlüsselt</strong> (XSalsa20-Poly1305, 256-Bit-Schlüssel)</li>
@@ -272,7 +291,7 @@
     <li>Es werden keine Daten an externe Server gesendet</li>
   </ul>
 
-  <h3>6.2 Relay-Synchronisierung (optional, Remote)</h3>
+  <h3>7.2 Relay-Synchronisierung (optional, Remote)</h3>
   <ul>
     <li>Ermöglicht Synchronisierung über verschiedene Netzwerke</li>
     <li>Erfordert einen Relay-Server (selbst gehostet oder bereitgestellt)</li>
@@ -280,13 +299,13 @@
     <li>Der Server sieht nur: verschlüsselte Datenblöcke, einen Familien-Identifikator und Zeitstempel</li>
   </ul>
 
-  <h3>6.3 Geräte-Kopplung</h3>
+  <h3>7.3 Geräte-Kopplung</h3>
   <ul>
     <li><strong>QR-Code:</strong> Der Verschlüsselungsschlüssel wird per QR-Code übertragen (lokaler Scan)</li>
     <li><strong>Remote-Code:</strong> Ein 6-stelliger Code verschlüsselt den Schlüssel zusätzlich für die Übertragung über den Relay-Server</li>
   </ul>
 
-  <h2>7. Backup &amp; Datenexport</h2>
+  <h2>8. Backup &amp; Datenexport</h2>
   <ul>
     <li>Backups werden als ZIP-Datei <strong>lokal auf Ihrem Gerät</strong> gespeichert</li>
     <li>Enthalten: Alle Haustier-Daten, Fotos, PDF-Dokumente und die Datenbank</li>
@@ -296,7 +315,7 @@
     <li><strong>Hinweis:</strong> Backup-Dateien sind nicht verschlüsselt. Bewahren Sie sie an einem sicheren Ort auf.</li>
   </ul>
 
-  <h2>8. Was wir NICHT tun</h2>
+  <h2>9. Was wir NICHT tun</h2>
   <div class="card">
     <ul style="margin-left:16px;">
       <li>Wir sammeln <strong>keine personenbezogenen Daten</strong></li>
@@ -309,7 +328,7 @@
     </ul>
   </div>
 
-  <h2>9. Datensicherheit</h2>
+  <h2>10. Datensicherheit</h2>
   <ul>
     <li><strong>Verschlüsselung bei Übertragung:</strong> XSalsa20-Poly1305 (256-Bit, NaCl SecretBox)</li>
     <li><strong>Lokale Speicherung:</strong> Im geschützten App-Verzeichnis (nicht für andere Apps zugänglich)</li>
@@ -318,7 +337,7 @@
     <li><strong>Löschbestätigung:</strong> Die Löschung aller Daten erfordert eine manuelle Texteingabe zur Bestätigung</li>
   </ul>
 
-  <h2>10. Ihre Rechte (DSGVO)</h2>
+  <h2>11. Ihre Rechte (DSGVO)</h2>
   <p>Da alle Daten lokal auf Ihrem Gerät gespeichert werden, haben Sie die volle Kontrolle:</p>
   <ul>
     <li><strong>Auskunft &amp; Zugang:</strong> Alle Daten sind direkt in der App einsehbar</li>
@@ -328,7 +347,7 @@
     <li><strong>App deinstallieren:</strong> Entfernt alle App-Daten vom Gerät (externe Backups bleiben erhalten)</li>
   </ul>
 
-  <h2 class="deletion-header" id="dataloeschung">11. Datenlöschung</h2>
+  <h2 class="deletion-header" id="dataloeschung">12. Datenlöschung</h2>
   <p>Sie können <strong>alle Ihre Daten jederzeit vollständig und unwiderruflich löschen</strong> — direkt in der App, ohne uns kontaktieren zu müssen:</p>
   <div class="card-highlight">
     <p style="font-size:18px;font-weight:700;">Einstellungen → Alle Daten löschen</p>
@@ -352,20 +371,20 @@
   </ul>
   <p><strong>Hinweis:</strong> Extern gespeicherte Backups (z.B. auf SD-Karte oder NAS) werden durch die Löschung in der App nicht erfasst und müssen manuell entfernt werden. Auf anderen synchronisierten Geräten bleiben die Daten ebenfalls erhalten, bis sie dort separat gelöscht werden.</p>
 
-  <h2>12. Kinder</h2>
+  <h2>13. Kinder</h2>
   <p>LokiTail richtet sich nicht speziell an Kinder. Die App sammelt keine personenbezogenen Daten, unabhängig vom Alter des Nutzers.</p>
 
-  <h2>13. Änderungen</h2>
+  <h2>14. Änderungen</h2>
   <p>Diese Datenschutzerklärung kann mit App-Updates aktualisiert werden. Wesentliche Änderungen werden in den Release-Notes kommuniziert. Das Datum der letzten Aktualisierung finden Sie oben auf dieser Seite.</p>
 
-  <h2>14. Kontakt</h2>
+  <h2>15. Kontakt</h2>
   <p>Bei Fragen zum Datenschutz erreichen Sie uns unter: <strong>macyo.apps.contact.mk@proton.me</strong></p>
 </div>
 
 <!-- ==================== ENGLISH ==================== -->
 <div class="container hidden" id="content-en">
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Last updated: March 25, 2026 · Version 0.8.32</p>
+  <p class="subtitle">Last updated: March 31, 2026 · Version 1.0.7</p>
 
   <h2>1. Data Controller</h2>
   <p>LokiTail is an app developed by an individual for private management of pet health data. There is no commercial operator and no central server.</p>
@@ -428,10 +447,29 @@
   </ul>
   <p>None of these actions send data to the internet — sharing happens exclusively between apps on your device.</p>
 
-  <h2>6. Synchronization (Optional)</h2>
+  <h2>6. Barcode Product Search (Optional)</h2>
+  <p>LokiTail offers an optional barcode scan feature to look up product information for pet food.</p>
+  <div class="card">
+    <h3>What happens?</h3>
+    <p>When scanning a barcode, the <strong>EAN barcode number</strong> is sent to <strong>Open Pet Food Facts</strong> (<a href="https://openpetfoodfacts.org" style="color:var(--accent);">openpetfoodfacts.org</a>, servers in France, EU) to retrieve product information.</p>
+    <h3>What data is transmitted?</h3>
+    <p>Only the <strong>EAN barcode number</strong> — no personal data, no device name, no IP address stored by us.</p>
+    <h3>When?</h3>
+    <p>Only when you have <strong>explicitly enabled "Online Product Search"</strong> in the settings (opt-in). A consent dialog appears before the first scan.</p>
+    <h3>Default</h3>
+    <p><strong>Disabled</strong> — no data is sent to external services without activation.</p>
+    <h3>Deactivation</h3>
+    <p>Can be disabled at any time under <strong>Settings → Online Product Search</strong>.</p>
+    <h3>Legal basis</h3>
+    <p>Consent (Art. 6(1)(a) GDPR).</p>
+    <h3>Data deletion</h3>
+    <p>Locally cached product data can be removed under <strong>Settings → Delete All Data</strong>.</p>
+  </div>
+
+  <h2>7. Synchronization (Optional)</h2>
   <p>Synchronization is <strong>completely optional</strong> and must be actively set up.</p>
 
-  <h3>6.1 Local Sync (LAN)</h3>
+  <h3>7.1 Local Sync (LAN)</h3>
   <ul>
     <li>Works only within the same Wi-Fi network</li>
     <li>All data is <strong>end-to-end encrypted</strong> (XSalsa20-Poly1305, 256-bit key)</li>
@@ -439,7 +477,7 @@
     <li>No data is sent to external servers</li>
   </ul>
 
-  <h3>6.2 Relay Sync (Optional, Remote)</h3>
+  <h3>7.2 Relay Sync (Optional, Remote)</h3>
   <ul>
     <li>Enables sync across different networks</li>
     <li>Requires a relay server (self-hosted or provided)</li>
@@ -447,13 +485,13 @@
     <li>The server only sees: encrypted data blobs, a family identifier, and timestamps</li>
   </ul>
 
-  <h3>6.3 Device Pairing</h3>
+  <h3>7.3 Device Pairing</h3>
   <ul>
     <li><strong>QR Code:</strong> The encryption key is transferred via QR code (local scan)</li>
     <li><strong>Remote Code:</strong> A 6-digit code additionally encrypts the key for relay transmission</li>
   </ul>
 
-  <h2>7. Backup &amp; Data Export</h2>
+  <h2>8. Backup &amp; Data Export</h2>
   <ul>
     <li>Backups are saved as ZIP files <strong>locally on your device</strong></li>
     <li>Contains: All pet data, photos, PDF documents, and the database</li>
@@ -463,7 +501,7 @@
     <li><strong>Note:</strong> Backup files are not encrypted. Store them in a safe location.</li>
   </ul>
 
-  <h2>8. What We Do NOT Do</h2>
+  <h2>9. What We Do NOT Do</h2>
   <div class="card">
     <ul style="margin-left:16px;">
       <li>We do <strong>not collect any personal data</strong></li>
@@ -476,7 +514,7 @@
     </ul>
   </div>
 
-  <h2>9. Data Security</h2>
+  <h2>10. Data Security</h2>
   <ul>
     <li><strong>Encryption in transit:</strong> XSalsa20-Poly1305 (256-bit, NaCl SecretBox)</li>
     <li><strong>Local storage:</strong> In the protected app directory (not accessible to other apps)</li>
@@ -485,7 +523,7 @@
     <li><strong>Deletion confirmation:</strong> Deleting all data requires manual text input for confirmation</li>
   </ul>
 
-  <h2>10. Your Rights (GDPR)</h2>
+  <h2>11. Your Rights (GDPR)</h2>
   <p>Since all data is stored locally on your device, you have full control:</p>
   <ul>
     <li><strong>Access:</strong> All data is directly viewable in the app</li>
@@ -495,7 +533,7 @@
     <li><strong>Uninstall:</strong> Removes all app data from the device (external backups remain)</li>
   </ul>
 
-  <h2 class="deletion-header" id="data-deletion">11. Data Deletion</h2>
+  <h2 class="deletion-header" id="data-deletion">12. Data Deletion</h2>
   <p>You can <strong>delete all your data at any time, completely and irreversibly</strong> — directly in the app, without needing to contact us:</p>
   <div class="card-highlight">
     <p style="font-size:18px;font-weight:700;">Settings → Delete All Data</p>
@@ -519,13 +557,13 @@
   </ul>
   <p><strong>Note:</strong> Externally stored backups (e.g., on SD card or NAS) are not affected by in-app deletion and must be removed manually. Data on other synced devices also remains until separately deleted there.</p>
 
-  <h2>12. Children</h2>
+  <h2>13. Children</h2>
   <p>LokiTail is not specifically directed at children. The app does not collect any personal data, regardless of the user's age.</p>
 
-  <h2>13. Changes</h2>
+  <h2>14. Changes</h2>
   <p>This privacy policy may be updated with app releases. Significant changes will be communicated in the release notes. The date of the last update can be found at the top of this page.</p>
 
-  <h2>14. Contact</h2>
+  <h2>15. Contact</h2>
   <p>For privacy-related questions, contact us at: <strong>macyo.apps.contact.mk@proton.me</strong></p>
 </div>
 
